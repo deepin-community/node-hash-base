@@ -1,0 +1,33 @@
+Source: node-hash-base
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Bastien Roucariès <rouca@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , node-inherits <!nocheck>
+ , node-readable-stream <!nocheck>
+ , node-safe-buffer <!nocheck>
+ , node-tape <!nocheck>
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-hash-base
+Vcs-Git: https://salsa.debian.org/js-team/node-hash-base.git
+Homepage: https://github.com/crypto-browserify/hash-base
+Rules-Requires-Root: no
+
+Package: node-hash-base
+Architecture: all
+Depends: ${misc:Depends}
+ , node-inherits
+ , node-readable-stream
+ , node-safe-buffer
+Description: abstract base class for javascript hash-streams
+ This module implements an abstract base class to inherit
+ from in order to create streams implementing the same API
+ as Node.js crypto API.
+ .
+ This module is needed for implementing in-browser context
+ hash function.
+ .
+ Node.js is an event-based server-side JavaScript engine.
